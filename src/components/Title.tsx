@@ -1,7 +1,7 @@
 const Title = () => {
   return (
     <div>
-      <h1>ワールドウェザー</h1>
+      <h1>World Weather</h1>
     </div>
   );
 };

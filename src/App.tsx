@@ -26,15 +26,20 @@ function App() {
     fetch(
       `https://api.weatherapi.com/v1/current.json?key=f17dd03a2cdc45fc9be201826220305&q=${city}&aqi=no`
     ).then((res) =>
-      res.json().then((data) =>
-        setResults({
-          country: data.location.country,
-          cityName: data.location.name,
-          temperature: data.current.temp_c,
-          conditionText: data.current.condition.text,
-          icon: data.current.condition.icon,
-        })
-      )
+      res
+        .json()
+        .then((data) =>
+          setResults({
+            country: data.location.country,
+            cityName: data.location.name,
+            temperature: data.current.temp_c,
+            conditionText: data.current.condition.text,
+            icon: data.current.condition.icon,
+          })
+        )
+        .catch((err) =>
+          alert("An error has occurred Please reload the page and try again.")
+        )
     );
   };
   return (
