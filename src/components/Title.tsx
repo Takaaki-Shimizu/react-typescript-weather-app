@@ -1,9 +1,5 @@
 const Title = () => {
-  return (
-    <div>
-      <h1>World Weather</h1>
-    </div>
-  );
+  return <h1>World Weather</h1>;
 };
 
 export default Title;
